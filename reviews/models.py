@@ -7,6 +7,9 @@ class Category(models.Model):
 	def __str__(self):
 		return self.name
 
+	class Meta:
+		ordering = ['name']
+
 class Store(models.Model):
 	name = models.CharField(max_length=150)
 	room = models.CharField(max_length=150,  null=True, blank=True)
@@ -19,6 +22,9 @@ class Store(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	class Meta:
+		ordering = ['name']
 
 class Review(models.Model):
 	score = models.IntegerField()

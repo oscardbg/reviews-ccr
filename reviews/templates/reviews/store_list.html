@@ -17,8 +17,11 @@
       <button type="submit">Buscar</button>
    </form>
 </div>
+<hr />
+<a href=" {% url 'reviews:stores' %} ">Reset</a>
+<hr />
 <ul class="storeLst">
-   {% for store in store_list %}
+   {% for store in page_obj %}
    <li>
       <h2>{{store.name}}</h2>
       <p>{{store.room}}</p>
@@ -26,6 +29,7 @@
    </li>
    {% endfor %}
 </ul>
+
 <ul class="pages">
    {% if page_obj.has_previous %}
    <li><a href="?page=1"> &laquo; first</a></li>
