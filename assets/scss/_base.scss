@@ -1,6 +1,9 @@
-/*■■■■■■■■■■■■■■■■■■■ Declarations */
+/*■■■■■■■■■■■■■■■■■■■■ Declarations */
+$dark-blue: #263e98;
+$light-blue: #1cb5e0;
+$yellow-1: #fcae1a;
 
-/*■■■■■■■■■■■■■■■■■■■ Reset */
+/*■■■■■■■■■■■■■■■■■■■■ Reset */
 * {
    margin: 0;
    padding: 0;
@@ -19,11 +22,15 @@ a {
    color: #fff;
 }
 
-/*■■■■■■■■■■■■■■■■■■■ Initial */
+/*■■■■■■■■■■■■■■■■■■■■ Initial */
 main {
    max-width: 1000px;
    margin: 0 auto;
+   & > h1 {
+      padding-top: 20px;
+      text-align: center;
+   }
 }
 
-/*■■■■■■■■■■■■■■■■■■■  */
-/*■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■  */

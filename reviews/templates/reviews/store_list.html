@@ -1,5 +1,5 @@
 <!-- . -->
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 <!-- . -->
 {% block title %}Tiendas{{block.super}}{% endblock %}
 <!-- . -->
@@ -23,9 +23,14 @@
 <ul class="storeLst">
    {% for store in page_obj %}
    <li>
-      <h2>{{store.name}}</h2>
-      <p>{{store.room}}</p>
-      <p>{{store.category.name}}</p>
+      <img src=" {% static 'img/defaultImg.png' %} " alt="" />
+      <div class="info">
+         <p class="strName">{{store.name}}</p>
+         <p>{{store.category.name}}</p>
+      </div>
+      <div class="score">
+         <p>3.9</p>
+      </div>
    </li>
    {% endfor %}
 </ul>
