@@ -8,8 +8,11 @@
 <div class="search">
    <form action="." method="get">
       <input type="text" name="storeTxt" placeholder="Nombre de la tienda" />
-      <select name="category">
+      <select name="categTxt">
          <option value="">Todas</option>
+         {% for cat in categories %}
+         <option value="{{cat.id}}">{{cat.name}}</option>
+         {% endfor %}
       </select>
       <button type="submit">Buscar</button>
    </form>
