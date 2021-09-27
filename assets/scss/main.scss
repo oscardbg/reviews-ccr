@@ -16,7 +16,6 @@ header {
    .logo {
       a {
          display: block;
-         background: red;
       }
       img {
          display: block;
@@ -81,6 +80,52 @@ header {
    }
 }
 
+/*■■■■■■■■■■■■■■■■■■■■ Buttons */
+.back {
+   display: inline-block;
+   padding: 8px 20px 8px 35px;
+   border: 1px solid $dark-blue;
+   text-align: center;
+   margin: 20px 0;
+   border-radius: 10px;
+   color: $dark-blue;
+   background: #fff;
+   position: relative;
+   transition: 0.2s;
+   &:before {
+      content: "\00AB";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-weight: bold;
+      transition: 0.2s;
+   }
+   &:hover {
+      background: $dark-blue;
+      color: #fff;
+      &:before {
+         left: 15px;
+      }
+   }
+}
+.add {
+   display: inline-block;
+   margin: 20px 0;
+   padding: 8px 25px;
+   background: $dark-blue;
+   font-weight: bold;
+   border: 1px solid $dark-blue;
+   border-radius: 10px;
+   box-shadow: 2px 2px 2px #fff;
+   transition: 0.2s;
+   &:hover {
+      box-shadow: 1px 1px 0 #fff, inset 0 0 3px rgba($light-blue, 0.8);
+      transform: translate(1px, 1px);
+      border-color: $light-blue;
+   }
+}
+
 /*■■■■■■■■■■■■■■■■■■■■ Store List */
 .storeLst {
    padding: 20px;
@@ -117,6 +162,111 @@ header {
    }
 }
 
-/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■ Store */
+.store {
+   display: flex;
+   padding: 15px;
+   border: 1px solid $dark-blue;
+   border-radius: 15px;
+   margin: 0 50px;
+   img {
+      margin-right: 20px;
+   }
+   .info {
+      flex: 1;
+      .strName {
+         font-size: 2rem;
+         font-family: "Bebas Neue";
+      }
+   }
+   .score {
+      p {
+         font-family: "Bebas Neue";
+         font-size: 4rem;
+         border-bottom: 5px solid #fff;
+      }
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Bar */
+.bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1px solid rgba(#fff, 0.2);
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Review List */
+.reviewLst {
+   padding-top: 20px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 15px;
+   li {
+      border: 1px solid $dark-blue;
+      padding: 10px;
+      border-radius: 10px;
+      .info {
+         display: flex;
+         justify-content: space-between;
+      }
+      .strName {
+         font-weight: bold;
+         font-size: 0.8rem;
+      }
+      .desc {
+         padding-top: 10px;
+      }
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Add Review */
+.new {
+   width: 400px;
+   margin: 20px auto 0;
+   padding: 15px;
+   border: 1px solid $dark-blue;
+   border-radius: 10px;
+   .frmT {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+   }
+   input,
+   label,
+   textarea {
+      display: block;
+      font-size: 0.9rem;
+      padding: 5px;
+      outline: none;
+   }
+   label {
+      padding-top: 15px;
+   }
+   textarea {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 100px;
+      max-height: 150px;
+   }
+   input[type="text"],
+   textarea {
+      border-radius: 5px;
+      border: 1px solid #fff;
+      &:focus {
+         border-color: $dark-blue;
+         box-shadow: 0 0 2px 4px $light-blue;
+      }
+   }
+   button {
+      color: #fff;
+      cursor: pointer;
+      margin: 20px auto 5px;
+      display: block;
+      font-size: 1rem;
+   }
+}
+
 /*■■■■■■■■■■■■■■■■■■■■  */
 /*■■■■■■■■■■■■■■■■■■■■  */
