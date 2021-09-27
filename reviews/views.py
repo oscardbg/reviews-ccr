@@ -1,7 +1,8 @@
 from django.views.generic import ListView, DetailView
 from .models import Category, Store, Review
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
+from .forms import ReviewForm
 
 def index(request):
 	return render(request, 'reviews/index.html')
@@ -38,3 +39,16 @@ def storeList(request):
 	}
 
 	return render(request, 'reviews/store_list.html', context)
+
+def createReview(request):
+	if request.method == 'POST':
+		form = ReviewForm(request.POST)
+		if form.is_valid():
+			print(form)
+	else:
+		form = ReviewForm()
+
+	context = {
+		'form': form
+	}
+	return render(request, 'reviews/review_add.html', context)
