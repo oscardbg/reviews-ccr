@@ -1,6 +1,8 @@
-from django.forms import ModelForm, ValidationError
+from django.forms import Form, ModelForm, ValidationError, CharField, IntegerField, RadioSelect, widgets
 from django.utils.translation import gettext_lazy as _
 from .models import Review
+
+SCORES = [(1, ''),(2, ''),(3, ''),(4, ''),(5, ''),]
 
 class ReviewForm(ModelForm):
 	class Meta:
@@ -10,6 +12,9 @@ class ReviewForm(ModelForm):
 			'score': _(''),
 			'name': _('Nombre:'),
 			'description': _('Descripcion:')
+		}
+		widgets = {
+			'score': RadioSelect(choices=SCORES)
 		}
 	
 	def clean_score(self):

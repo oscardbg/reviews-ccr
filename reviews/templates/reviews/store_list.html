@@ -7,7 +7,12 @@
 <h1>Lista de tiendas</h1>
 <div class="search">
    <form action="." method="get">
-      <input type="text" name="storeTxt" placeholder="Nombre de la tienda" />
+      <input
+         type="text"
+         name="storeTxt"
+         placeholder="Nombre de la tienda"
+         autofocus
+      />
       <select name="categTxt">
          <option value="">Todas</option>
          {% for cat in categories %}
@@ -25,7 +30,11 @@
    <li>
       <img src=" {% static 'img/defaultImg.png' %} " alt="" />
       <div class="info">
-         <p class="strName">{{store.name}}</p>
+         <p>
+            <a href=" {% url 'reviews:store' store.id %} " class="strName">
+               {{store.name}}
+            </a>
+         </p>
          <p>{{store.category.name}}</p>
       </div>
       <div class="score">

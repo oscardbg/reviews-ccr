@@ -4,6 +4,8 @@
 {% block title %}Opinar{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
+<h2>{{store.name}} Reviews</h2>
+<a href=" {% url 'reviews:store' store.id %} ">Regresar</a>
 <form action="" method="post">
    {% csrf_token %} {{form.as_p}}
    <button type="submit">Agregar</button>

@@ -1,0 +1,50 @@
+<!-- . -->
+{% extends 'base.html' %} {% load static %}
+<!-- . -->
+{% block title %}Detalles{{block.super}}{% endblock %}
+<!-- . -->
+{% block main %}
+<a href=" {% url 'reviews:stores' %} ">Regresar</a>
+<div class="store">
+   <img src=" {% static 'img/defaultImg.png' %} " alt="" />
+   <div class="info">
+      <p class="strName">{{store.name}}</p>
+      <p>{{store.category.name}}</p>
+      <p>{{store.room}}</p>
+   </div>
+   <div class="score">
+      <p>3.9</p>
+   </div>
+</div>
+<h2>Reviews</h2>
+<a href=" {% url 'reviews:create' store.id %} ">Agregar</a>
+<ul class="reviewLst">
+   {% for review in store.reviews.all %}
+   <li>
+      <div class="info">
+         <p class="strName">{{review.name}}</p>
+         <p>{{review.score}}</p>
+         <p>{{review.created}}</p>
+      </div>
+      <div class="desc">
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            perferendis.
+         </p>
+      </div>
+   </li>
+   {% endfor %}
+</ul>
+
+<ul class="pages">
+   {% if page_obj.has_previous %}
+   <li><a href="?page=1"> &laquo; first</a></li>
+   <li><a href="?page={{page_obj.previous_page_number}} ">previous</a></li>
+   {% endif %}
+   <li>Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</li>
+   {% if page_obj.has_next %}
+   <li><a href="?page={{page_obj.next_page_number}} ">next</a></li>
+   <li><a href="?page={{page_obj.paginator.num_pages}} ">last &raquo;</a></li>
+   {% endif %}
+</ul>
+{% endblock %}

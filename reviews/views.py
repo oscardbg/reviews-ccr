@@ -40,7 +40,11 @@ def storeList(request):
 
 	return render(request, 'reviews/store_list.html', context)
 
-def createReview(request):
+class StoreDetailView(DetailView):
+	model = Store
+
+def createReview(request, storeId):
+	store = Store.objects.get(id=storeId)
 	if request.method == 'POST':
 		form = ReviewForm(request.POST)
 		if form.is_valid():
@@ -49,6 +53,7 @@ def createReview(request):
 		form = ReviewForm()
 
 	context = {
-		'form': form
+		'form': form,
+		'store': store
 	}
 	return render(request, 'reviews/review_add.html', context)

@@ -1,4 +1,4 @@
-from .views import index, storeList, createReview
+from .views import index, storeList, createReview, StoreDetailView
 from django.urls import path
 
 app_name = 'reviews'
@@ -6,5 +6,6 @@ app_name = 'reviews'
 urlpatterns = [
 	path('', index, name='index'),
 	path('tiendas/', storeList, name='stores'),
-	path('review/', createReview, name='review')
+	path('tiendas/<int:pk>/', StoreDetailView.as_view(), name='store'),
+	path('review/<int:storeId>', createReview, name='create'),
 ]
