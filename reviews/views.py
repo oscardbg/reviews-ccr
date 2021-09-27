@@ -48,7 +48,10 @@ def createReview(request, storeId):
 	if request.method == 'POST':
 		form = ReviewForm(request.POST)
 		if form.is_valid():
-			print(form)
+			instance = form.save(commit=False)
+			instance.store=store
+			instance.save()
+			return redirect('reviews:store', storeId)
 	else:
 		form = ReviewForm()
 

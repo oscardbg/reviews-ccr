@@ -28,7 +28,7 @@ class Store(models.Model):
 
 class Review(models.Model):
 	score = models.IntegerField()
-	name = models.CharField(max_length=150)
+	name = models.CharField(max_length=150, blank=True)
 	description = models.TextField( null=True, blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 	store = models.ForeignKey(

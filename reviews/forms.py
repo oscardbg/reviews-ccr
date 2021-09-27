@@ -19,7 +19,7 @@ class ReviewForm(ModelForm):
 	
 	def clean_score(self):
 		score = self.cleaned_data.get('score')
-		if score < 1:
+		if score == None:
 			raise ValidationError('Debes ingresar un valor...')
 		return score
 
