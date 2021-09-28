@@ -243,6 +243,9 @@ header {
    label {
       padding-top: 15px;
    }
+   input[type="text"] {
+      width: 100%;
+   }
    textarea {
       width: 100%;
       max-width: 100%;
@@ -256,7 +259,7 @@ header {
       border: 1px solid #fff;
       &:focus {
          border-color: $dark-blue;
-         box-shadow: 0 0 2px 4px $light-blue;
+         box-shadow: 0 0 2px 2px $light-blue;
       }
    }
    button {

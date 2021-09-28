@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
-from .models import Category, Store, Review
 from django.shortcuts import redirect, render
+from .models import Category, Store, Review
 from django.core.paginator import Paginator
 from .forms import ReviewForm
 

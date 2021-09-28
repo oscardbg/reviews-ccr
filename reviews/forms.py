@@ -1,4 +1,4 @@
-from django.forms import Form, ModelForm, ValidationError, CharField, IntegerField, RadioSelect, widgets
+from django.forms import Form, ModelForm, ValidationError, RadioSelect, TextInput, Textarea
 from django.utils.translation import gettext_lazy as _
 from .models import Review
 
@@ -14,9 +14,11 @@ class ReviewForm(ModelForm):
 			'description': _('Descripcion:')
 		}
 		widgets = {
-			'score': RadioSelect(choices=SCORES)
+			'score': RadioSelect(choices=SCORES),
+			'name': TextInput(attrs={'autocomplete': 'off'}),
+			'description': Textarea(attrs={'autocomplete': 'off'})
 		}
-	
+			
 	def clean_score(self):
 		score = self.cleaned_data.get('score')
 		if score == None:

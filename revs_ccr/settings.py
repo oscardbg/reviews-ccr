@@ -71,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'revs_ccr.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
