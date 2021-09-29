@@ -38,7 +38,11 @@
          <p>{{store.category.name}}</p>
       </div>
       <div class="score">
-         <p>3.9</p>
+         {% if store.totalScore == 0 %}
+         <p>&theta;</p>
+         {% else %}
+         <p>{{store.totalScore|floatformat}}</p>
+         {% endif %}
       </div>
    </li>
    {% endfor %}

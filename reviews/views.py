@@ -12,6 +12,10 @@ def storeList(request):
 	
 	storeTxt = request.GET.get('storeTxt') or ''
 	categTxt = request.GET.get('categTxt') or ''
+
+	if not categTxt.isdigit():
+		categTxt = ''
+
 	catObj = Category.objects.get(id=categTxt) if categTxt else None
 
 	if storeTxt and categTxt:

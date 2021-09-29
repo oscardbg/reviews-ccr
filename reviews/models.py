@@ -26,6 +26,15 @@ class Store(models.Model):
 	class Meta:
 		ordering = ['name']
 
+	def totalScore(self):
+		total = 0
+		for rev in self.reviews.all():
+			total = total + rev.score
+		if total > 0:
+			return total / len(self.reviews.all())
+		else:
+			return 0
+
 class Review(models.Model):
 	score = models.IntegerField()
 	name = models.CharField(max_length=150, blank=True)
