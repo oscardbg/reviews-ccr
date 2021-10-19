@@ -1,0 +1,89 @@
+/*■■■■■■■■■■■■■■■■■■■■ New Form */
+.new {
+   width: 400px;
+   margin: 40px auto 0;
+   padding: 60px 15px 15px;
+   border: 2px solid $light-blue;
+   border-radius: 10px;
+   background: #fff;
+   box-shadow: 2px 2px 4px rgba(#000, 0.4);
+   position: relative;
+   .frmT {
+      text-align: center;
+      padding: 20px 0;
+      background: $light-blue;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 7px 7px 0 0;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+   }
+   input,
+   label,
+   textarea {
+      display: block;
+      font-size: 0.9rem;
+      padding: 5px;
+      outline: none;
+   }
+   label {
+      padding-top: 15px;
+   }
+   input[type="text"] {
+      width: 100%;
+   }
+   textarea {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 100px;
+      max-height: 150px;
+   }
+   input[type="text"],
+   textarea {
+      border-radius: 5px;
+      border: 1px solid $dark-blue;
+      &:focus {
+         border-color: $dark-blue;
+         box-shadow: 0 0 0 2px rgba($light-blue, 0.4);
+      }
+   }
+   button {
+      color: #fff;
+      cursor: pointer;
+      margin: 20px auto 5px;
+      display: block;
+      font-size: 1rem;
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Stars */
+
+#id_score {
+   display: flex;
+   justify-content: center;
+   span {
+      font-size: 4rem;
+      color: #222;
+      cursor: pointer;
+   }
+   input {
+      display: none;
+      /*&:not(:checked) + span:hover{
+			color: orange;
+		}*/
+      &:checked + span {
+         color: orange;
+      }
+   }
+   .ok {
+      color: orange;
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■  */

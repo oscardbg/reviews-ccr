@@ -7,6 +7,9 @@ from .forms import ReviewForm
 def index(request):
 	return render(request, 'reviews/index.html')
 
+def about(request):
+	return render(request, 'reviews/about.html')
+
 def storeList(request):
 	categories = Category.objects.all()
 	

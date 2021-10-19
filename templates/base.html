@@ -11,13 +11,18 @@
    <body>
       <header>
          <nav>
-            <h1 class="logo"><a href=" {% url 'reviews:index' %} ">Home</a></h1>
+            <h1 class="logo">
+               <a href=" {% url 'reviews:index' %} ">
+                  <img src="{% static 'img/rccrLogo.png' %}" alt="" />
+               </a>
+            </h1>
             <ul>
                <li><a href=" {% url 'reviews:stores' %} ">Tiendas</a></li>
-               <li><a href="">Nosotros</a></li>
+               <li><a href=" {% url 'reviews:about' %} ">Nosotros</a></li>
             </ul>
          </nav>
       </header>
       <main>{% block main %}{% endblock %}</main>
+      <footer>&copy; 2021, Oscar Pastrano</footer>
    </body>
 </html>

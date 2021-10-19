@@ -28,7 +28,9 @@
 <ul class="storeLst">
    {% for store in page_obj %}
    <li>
-      <img src=" {% static 'img/defaultImg.png' %} " alt="" />
+      <div class="logo">
+         <img src=" {% static 'img/storeLogo.png' %} " alt="" />
+      </div>
       <div class="info">
          <p>
             <a href=" {% url 'reviews:store' store.id %} " class="strName">
@@ -50,13 +52,21 @@
 
 <ul class="pages">
    {% if page_obj.has_previous %}
-   <li><a href="?page=1"> &laquo; first</a></li>
-   <li><a href="?page={{page_obj.previous_page_number}} ">previous</a></li>
+   <li class="fst"><a href="?page=1"> &laquo; Primera</a></li>
+   <li class="prev">
+      <a href="?page={{page_obj.previous_page_number}} ">Anterior</a>
+   </li>
    {% endif %}
-   <li>Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</li>
+   <li class="act">
+      Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}
+   </li>
    {% if page_obj.has_next %}
-   <li><a href="?page={{page_obj.next_page_number}} ">next</a></li>
-   <li><a href="?page={{page_obj.paginator.num_pages}} ">last &raquo;</a></li>
+   <li class="nxt">
+      <a href="?page={{page_obj.next_page_number}} ">Siguiente</a>
+   </li>
+   <li class="lst">
+      <a href="?page={{page_obj.paginator.num_pages}} ">Última &raquo;</a>
+   </li>
    {% endif %}
 </ul>
 {% endblock %}

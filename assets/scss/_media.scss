@@ -1,0 +1,50 @@
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■  */
+@media screen and (max-width: 800px) {
+	.search {
+		form {
+			flex-direction: column;
+			input,
+			select,
+			button {
+				margin-bottom: 5px;
+				border: 1px solid $dark-blue;
+				border-radius: 5px;
+				padding: 5px 10px;
+			}
+			button {
+				&:hover {
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+	.storeLst {
+		grid-template-columns: 1fr;
+	}
+	.reviewLst {
+		grid-template-columns: 1fr;
+	}
+	.store {
+		max-width: 90%;
+	}
+}
+
+/*■■■■■■■■■■■■■■■■■■■■  */
+@media screen and (max-width: 500px) {
+	.pages {
+		flex-direction: column;
+
+		a {
+			padding: 5px 20px;
+		}
+		.fst,
+		.lst {
+			border-radius: 5px;
+		}
+		li {
+			margin-bottom: 5px;
+			border-radius: 5px;
+		}
+	}
+}
