@@ -5,19 +5,11 @@
 <!-- . -->
 {% block main %}
 <a href=" {% url 'reviews:store' store.id %} " class="back">Regresar</a>
-<div class="store">
-   <img src=" {% static 'img/defaultImg.png' %} " alt="" />
-   <div class="info">
-      <p class="strName">{{store.name}}</p>
-      <p>{{store.category.name}}</p>
-      <p>{{store.room}}</p>
-   </div>
-   <div class="score">
-      <p>3.9</p>
-   </div>
-</div>
+
+{% include './partials/storeData.html' %}
+
 <div class="new">
-   <p class="frmT">Review</p>
+   <p class="frmT">Agrega una reseña</p>
    <form action="" method="post">
       {% csrf_token %} {{form}}
       <button type="submit" class="add">Agregar</button>

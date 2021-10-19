@@ -1,0 +1,21 @@
+{% if page_obj %}
+<ul class="pages">
+   {% if page_obj.has_previous %}
+   <li class="fst"><a href="?page=1"> &laquo; Primera</a></li>
+   <li class="prev">
+      <a href="?page={{page_obj.previous_page_number}} ">Anterior</a>
+   </li>
+   {% endif %}
+   <li class="act">
+      Página {{page_obj.number}} de {{page_obj.paginator.num_pages}}
+   </li>
+   {% if page_obj.has_next %}
+   <li class="nxt">
+      <a href="?page={{page_obj.next_page_number}} ">Siguiente</a>
+   </li>
+   <li class="lst">
+      <a href="?page={{page_obj.paginator.num_pages}} ">Última &raquo;</a>
+   </li>
+   {% endif %}
+</ul>
+{% endif %}

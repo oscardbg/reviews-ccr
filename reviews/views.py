@@ -36,7 +36,7 @@ def storeList(request):
 	else:
 		page = 1
 	
-	paginator = Paginator(store_list, 20)
+	paginator = Paginator(store_list, 10)
 	page_obj = paginator.get_page(page)
 
 	context = {

@@ -1,25 +1,15 @@
 <!-- . -->
-{% extends 'base.html' %} {% load static %}
+{% extends 'base.html' %}
+<!-- . -->
+{% load static %}
 <!-- . -->
 {% block title %}Detalles{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
 <a href=" {% url 'reviews:stores' %} " class="back">Regresar</a>
-<div class="store">
-   <img src=" {% static 'img/defaultImg.png' %} " alt="" />
-   <div class="info">
-      <p class="strName">{{store.name}}</p>
-      <p>{{store.category.name}}</p>
-      <p>{{store.room}}</p>
-   </div>
-   <div class="score">
-      {% if store.totalScore == 0 %}
-      <p>&theta;</p>
-      {% else %}
-      <p>{{store.totalScore|floatformat}}</p>
-      {% endif %}
-   </div>
-</div>
+
+{% include './partials/storeData.html' %}
+
 <article>
    <div class="bar">
       <h2>Reviews</h2>
@@ -41,18 +31,6 @@
       {% endfor %}
    </ul>
 
-   <ul class="pages">
-      {% if page_obj.has_previous %}
-      <li><a href="?page=1"> &laquo; first</a></li>
-      <li><a href="?page={{page_obj.previous_page_number}} ">previous</a></li>
-      {% endif %}
-      <li>Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</li>
-      {% if page_obj.has_next %}
-      <li><a href="?page={{page_obj.next_page_number}} ">next</a></li>
-      <li>
-         <a href="?page={{page_obj.paginator.num_pages}} ">last &raquo;</a>
-      </li>
-      {% endif %}
-   </ul>
+   {% include './partials/pagination.html' %}
 </article>
 {% endblock %}
