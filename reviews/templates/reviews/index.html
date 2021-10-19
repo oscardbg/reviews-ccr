@@ -1,11 +1,13 @@
 <!-- . -->
 {% extends 'base.html' %}
 <!-- . -->
+{% load static %}
+<!-- . -->
 {% block title %}Index{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
 <div class="home">
-   <img src="/img/rccrBanner.png" alt="" class="bnr" />
+   <img src="{% static 'img/rccrBanner.png' %} " alt="" class="bnr" />
    <div class="banner">
       <h1>Reseñas el recreo</h1>
       <a href="/tiendas" class="goStrs">ver tiendas</a>
