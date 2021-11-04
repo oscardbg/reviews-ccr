@@ -22,7 +22,7 @@
    {% if page_obj.has_next %}
    <li class="nxt">
       <a
-         href="?{%if request.GET.storeTxt%}storeTxt={{ request.GET.storeTxt }}&{% endif %}page={{page_obj.next_page_number}} "
+         href="?{%if request.GET.storeTxt%}storeTxt={{ request.GET.storeTxt }}&{% endif %}page={{page_obj.next_page_number}}"
       >
          Siguiente</a
       >
