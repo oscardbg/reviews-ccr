@@ -21,7 +21,7 @@ class ReviewForm(ModelForm):
 			
 	def clean_score(self):
 		score = self.cleaned_data.get('score')
-		if score == None:
+		if score < 0:
 			raise ValidationError('Debes ingresar un valor...')
 		return score
 
@@ -30,11 +30,3 @@ class ReviewForm(ModelForm):
 		if name == '':
 			raise ValidationError('Debes ingresar un nombre...')
 		return name
-
-	def clean_description(self):
-		description = self.cleaned_data.get('description')
-		if description == '':
-			raise ValidationError('Ingresar algo aqui...')
-		if description == 'create':
-			raise ValidationError('Anything but create...')
-		return description

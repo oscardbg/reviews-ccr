@@ -12,7 +12,6 @@
          name="storeTxt"
          placeholder="Nombre de la tienda"
          value="{{request.GET.storeTxt}}"
-         autofocus
       />
       <select name="categTxt">
          <option value="">Todas</option>
@@ -44,7 +43,7 @@
          {% if store.totalScore == 0 %}
          <p>&theta;</p>
          {% else %}
-         <p>{{store.totalScore|floatformat}}</p>
+         <p>{{store.totalScore|floatformat}} <span>/5</span></p>
          {% endif %}
       </div>
    </li>

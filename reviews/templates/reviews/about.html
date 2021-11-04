@@ -1,11 +1,13 @@
 <!-- . -->
 {% extends 'base.html' %}
 <!-- . -->
+{% load static %}
+<!-- . -->
 {% block title %}Nosotros{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
 <div class="about">
-   <img src="/img/rccrBanner.png" alt="" />
+   <img src="{% static 'img/rccrBanner.png' %} " alt="" />
    <h1>Reseñas CCR</h1>
    <p>
       Las tiendas y negocios más importantes del país son los que abarcan gran
