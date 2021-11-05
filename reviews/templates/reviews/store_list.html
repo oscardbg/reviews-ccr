@@ -10,14 +10,19 @@
 {% else %}
 <h1>{{catObj.name}}</h1>
 {% endif %}
-
-<span><a href=" {% url 'reviews:stores' 0 %} ">Todas</a></span
->,
-<!-- . -->
-{% for cat in categories %}
-<span><a href=" {% url 'reviews:stores' cat.id %} "> {{cat.name}}</a> </span>,
-{% endfor %}
 <div class="search">
+   <div class="filter">
+      <label for="cts">Categorias (22) &#8628;</label>
+      <input type="checkbox" id="cts" />
+      <ul>
+         <li><a href=" {% url 'reviews:stores' 0 %} ">TODAS</a></li>
+         {% for cat in categories %}
+         <li>
+            <a href=" {% url 'reviews:stores' cat.id %} ">{{cat.name}}</a>
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
    <form action="." method="get">
       <input
          type="text"

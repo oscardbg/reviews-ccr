@@ -2,11 +2,75 @@
 /*■■■■■■■■■■■■■■■■■■■■ Search */
 .search {
    padding-top: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 40%;
+   margin: 0 auto;
+   a {
+      display: block;
+      padding: 5px 0;
+      border: 1px solid rgba($dark-blue, 0.5);
+      border-radius: 5px;
+      text-align: center;
+      color: $dark-blue;
+      &:hover {
+         border-color: $dark-blue;
+         background: #fff;
+      }
+   }
+   .filter {
+      position: relative;
+      flex: 2;
+   }
+   label {
+      background: $light-blue;
+      padding: 5px 15px;
+      border: 1px solid $dark-blue;
+      border-radius: 10px;
+      color: #fff;
+      transition: 0.2s;
+      cursor: pointer;
+      &:hover {
+         background: $dark-blue;
+      }
+   }
+   #cts {
+      display: none;
+      &:checked + ul {
+         display: grid;
+      }
+   }
+   ul {
+      display: grid;
+      padding: 5px;
+      border-radius: 5px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5px;
+      align-items: center;
+      position: absolute;
+      width: 600px;
+      left: -110%;
+      top: 35px;
+      font-size: 0.9rem;
+      display: none;
+      background: #fafafa;
+      border: 2px solid $dark-blue;
+      &:before {
+         content: "";
+         position: absolute;
+         border-bottom: 10px solid $dark-blue;
+         border-left: 10px solid transparent;
+         border-right: 10px solid transparent;
+         top: -10px;
+         left: 50%;
+         transform: translate(-50%, 0);
+      }
+   }
    form {
       margin: 0 auto;
       max-width: 50%;
       display: flex;
-      justify-content: center;
       font-size: 0.9rem;
       input {
          padding: 5px 10px;
@@ -14,15 +78,6 @@
          outline: none;
          border: 1px solid $dark-blue;
          border-right: none;
-         &:focus {
-            box-shadow: 0 0 0 2px rgba($light-blue, 0.6);
-         }
-      }
-      select {
-         border: 1px solid $dark-blue;
-         padding: 5px;
-         border-right: none;
-         outline: none;
          &:focus {
             box-shadow: 0 0 0 2px rgba($light-blue, 0.6);
          }
