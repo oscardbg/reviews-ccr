@@ -4,7 +4,19 @@
 {% block title %}Tiendas{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
-<h1>Lista de tiendas</h1>
+<!-- . -->
+{% if not catObj %}
+<h1>Todas las tiendas</h1>
+{% else %}
+<h1>{{catObj.name}}</h1>
+{% endif %}
+
+<span><a href=" {% url 'reviews:stores' 0 %} ">Todas</a></span
+>,
+<!-- . -->
+{% for cat in categories %}
+<span><a href=" {% url 'reviews:stores' cat.id %} "> {{cat.name}}</a> </span>,
+{% endfor %}
 <div class="search">
    <form action="." method="get">
       <input
@@ -13,18 +25,9 @@
          placeholder="Nombre de la tienda"
          value="{{request.GET.storeTxt}}"
       />
-      <select name="categTxt">
-         <option value="">Todas</option>
-         {% for cat in categories %}
-         <option value="{{cat.id}}">{{cat.name}}</option>
-         {% endfor %}
-      </select>
       <button type="submit">Buscar</button>
    </form>
 </div>
-<hr />
-<a href=" {% url 'reviews:stores' %} ">Reset</a>
-<hr />
 <ul class="storeLst">
    {% for store in page_obj %}
    <li>

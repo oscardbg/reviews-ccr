@@ -6,7 +6,7 @@
 {% block title %}Detalles{{block.super}}{% endblock %}
 <!-- . -->
 {% block main %}
-<a href=" {% url 'reviews:stores' %} " class="back">Regresar</a>
+<a href=" {% url 'reviews:stores' 0 %} " class="back">Regresar</a>
 
 {% include './partials/storeData.html' %}
 

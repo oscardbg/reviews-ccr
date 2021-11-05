@@ -1,3 +1,4 @@
+from django.core import paginator
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect, render
 from .models import Category, Store, Review
@@ -10,25 +11,23 @@ def index(request):
 def about(request):
 	return render(request, 'reviews/about.html')
 
-def storeList(request):
+def storeList(request, ctg):
 	categories = Category.objects.all()
 	
 	storeTxt = request.GET.get('storeTxt') or ''
-	categTxt = request.GET.get('categTxt') or ''
+	catObj = None
 
-	if not categTxt.isdigit():
-		categTxt = ''
-
-	catObj = Category.objects.get(id=categTxt) if categTxt else None
-
-	if storeTxt and categTxt:
-		store_list = Store.objects.filter(name__icontains=storeTxt, category=catObj)
-	elif storeTxt != '' and categTxt == '':
-		store_list = Store.objects.filter(name__icontains=storeTxt)
-	elif storeTxt == '' and categTxt != '':
-		store_list = Store.objects.filter(category=catObj)
+	if ctg == 0:
+		if storeTxt:
+			store_list = Store.objects.filter(name__icontains=storeTxt)
+		else:
+			store_list = Store.objects.all()
 	else:
-		store_list = Store.objects.all()
+		catObj = Category.objects.get(id=ctg)
+		if storeTxt:
+			store_list = Store.objects.filter(name__icontains=storeTxt, category=catObj)
+		else:
+			store_list = Store.objects.filter(category=catObj)
 
 	page = request.GET.get('page')
 	if page and page.isdigit():
@@ -40,7 +39,7 @@ def storeList(request):
 	page_obj = paginator.get_page(page)
 
 	context = {
-		'store_list': store_list,
+		'catObj': catObj,
 		'categories': categories,
 		'page_obj': page_obj
 	}
