@@ -10,7 +10,7 @@
    <img src="{% static 'img/rccrBanner.png' %} " alt="" class="bnr" />
    <div class="banner">
       <h1>Reseñas el recreo</h1>
-      <a href="/tiendas" class="goStrs">ver tiendas</a>
+      <a href=" {% url 'reviews:stores' 0 %} " class="goStrs">ver tiendas</a>
    </div>
 </div>
 {% endblock %}

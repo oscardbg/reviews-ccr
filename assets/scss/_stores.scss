@@ -34,6 +34,9 @@
       &:hover {
          background: $dark-blue;
       }
+      span {
+         padding-left: 10px;
+      }
    }
    #cts {
       display: none;

@@ -21,7 +21,19 @@
       <li>
          <div class="info">
             <p class="strName">{{review.name}}</p>
-            <p>{{review.score}}</p>
+            <p>
+               {% if review.score == 5 %} ⭐⭐⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 4 %} ⭐⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 3 %} ⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 2 %} ⭐⭐
+               <!-- . -->
+               {% else %} ⭐
+               <!-- . -->
+               {% endif %}
+            </p>
             <p class="date">{{review.created|date:'d/M/Y H:i'}}</p>
          </div>
          <div class="desc">
