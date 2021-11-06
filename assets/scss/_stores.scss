@@ -227,8 +227,9 @@ article {
       border-radius: 10px;
       background: #fafafa;
       .info {
-         display: flex;
-         justify-content: space-between;
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         align-items: center;
       }
       .strName {
          font-weight: bold;
