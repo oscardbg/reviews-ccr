@@ -1,0 +1,63 @@
+<!-- . -->
+{% extends 'base.html' %} {% load static %}
+<!-- . -->
+{% block title %}Tiendas{{block.super}}{% endblock %}
+<!-- . -->
+{% block main %}
+<!-- . -->
+{% if not catObj %}
+<h1>Todas las tiendas</h1>
+{% else %}
+<h1>{{catObj.name}}</h1>
+{% endif %}
+<div class="search">
+   <div class="filter">
+      <label for="cts">Categorias (22) <span>&#11167;</span> </label>
+      <input type="checkbox" id="cts" />
+      <ul>
+         <li><a href=" {% url 'reviews:stores' 0 %} ">TODAS</a></li>
+         {% for cat in categories %}
+         <li>
+            <a href=" {% url 'reviews:stores' cat.id %} ">{{cat.name}}</a>
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
+   <form action="." method="get">
+      <input
+         type="text"
+         name="storeTxt"
+         placeholder="Nombre de la tienda"
+         value="{{request.GET.storeTxt}}"
+      />
+      <button type="submit">Buscar</button>
+   </form>
+</div>
+<ul class="storeLst">
+   {% for store in page_obj %}
+   <li>
+      <div class="logo">
+         <img src=" {% static 'img/storeLogo.png' %} " alt="" />
+      </div>
+      <div class="info">
+         <p>
+            <a href=" {% url 'reviews:store' store.id %} " class="strName">
+               {{store.name}}
+            </a>
+         </p>
+         <p>{{store.category.name}}</p>
+      </div>
+      <div class="score">
+         {% if store.totalScore == 0 %}
+         <p>&theta;</p>
+         {% else %}
+         <p>{{store.totalScore|floatformat}} <span>/5</span></p>
+         {% endif %}
+      </div>
+   </li>
+   {% endfor %}
+</ul>
+
+{% include './partials/pagination.html' %}
+<!-- . -->
+{% endblock %}

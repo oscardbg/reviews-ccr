@@ -1,0 +1,48 @@
+<!-- . -->
+{% extends 'base.html' %}
+<!-- . -->
+{% load static %}
+<!-- . -->
+{% block title %}Detalles{{block.super}}{% endblock %}
+<!-- . -->
+{% block main %}
+<a href=" {% url 'reviews:stores' 0 %} " class="back">Regresar</a>
+
+{% include './partials/storeData.html' %}
+
+<article>
+   <div class="bar">
+      <h2>Reviews</h2>
+      <a href=" {% url 'reviews:create' store.id %} " class="add">Agregar</a>
+   </div>
+
+   <ul class="reviewLst">
+      {% for review in store.reviews.all %}
+      <li>
+         <div class="info">
+            <p class="strName">{{review.name}}</p>
+            <p>
+               {% if review.score == 5 %} ⭐⭐⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 4 %} ⭐⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 3 %} ⭐⭐⭐
+               <!-- . -->
+               {% elif review.score == 2 %} ⭐⭐
+               <!-- . -->
+               {% else %} ⭐
+               <!-- . -->
+               {% endif %}
+            </p>
+            <p class="date">{{review.created|date:'d/M/Y H:i'}}</p>
+         </div>
+         <div class="desc">
+            <p>{{review.description|truncatechars:80}}</p>
+         </div>
+      </li>
+      {% endfor %}
+   </ul>
+
+   {% include './partials/pagination.html' %}
+</article>
+{% endblock %}

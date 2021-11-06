@@ -1,0 +1,44 @@
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■ Header */
+header {
+   background: $dark-blue;
+   text-transform: uppercase;
+   nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   .logo {
+      a {
+         display: block;
+      }
+      img {
+         display: block;
+         width: 120px;
+      }
+   }
+   ul {
+      display: flex;
+      a {
+         display: block;
+         padding: 2px 20px;
+         font-size: 1.2rem;
+         border-bottom: 4px solid #fff;
+         font-family: "Bebas Neue";
+         &:hover {
+            color: $yellow-1;
+            border-bottom-color: $yellow-1;
+         }
+      }
+      li {
+         padding: 0 10px;
+      }
+      .active {
+         border-bottom-color: $yellow-1;
+         color: $yellow-1;
+      }
+   }
+}

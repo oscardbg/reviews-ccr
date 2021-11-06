@@ -1,0 +1,39 @@
+<!-- . -->
+{% extends 'base.html' %}
+<!-- . -->
+{% load static %}
+<!-- . -->
+{% block title %}Nosotros{{block.super}}{% endblock %}
+<!-- . -->
+{% block main %}
+<div class="about">
+   <img src="{% static 'img/rccrBanner.png' %} " alt="" />
+   <h1>Reseñas CCR</h1>
+   <p>
+      Las tiendas y negocios más importantes del país son los que abarcan gran
+      cuota del mercado y sus ingresos les permite crear páginas web para que
+      sus usuarios y potenciales clientes ubiquen sus productos o servicios con
+      mayor facilidad. Mientras que pequeños negocios debido a sus limitaciones
+      económicas no cuentan con los recursos suficientes y solo pueden publicar
+      información en redes sociales. Estas herramientas son de gran ayuda para
+      el vendedor, pero en la mayoría de los casos no lo son para el consumidor.
+   </p>
+   <p>
+      Los negocios de los centros comerciales son los más visitados por el
+      usuario final ya que brindan mayor confianza además de sus ofertas,
+      facilidades de pago, horarios de atención y la comodidad de acceder a todo
+      tipo de productos y servicios en el mismo lugar. Uno de los principales
+      centros comerciales del centro sur de la ciudad es El Recreo que cuenta
+      con más de 100 locales donde su sitio web oficial muestra un directorio de
+      la mayoría de ellos. Permite al usuario realizar búsquedas por nombre y
+      categoría, además muestra información de contacto de los negocios.
+   </p>
+   <p>
+      Lamentablemente no todos cuentan con sitio web o redes sociales y para los
+      usuarios seria de gran ayuda poder tener referencias antes de adquirir un
+      producto o servicio. La aplicación “Reseñas CCR” busca cubrir esta
+      necesidad donde además de mostrar los locales del centro comercial se
+      podrán publicar reseñas.
+   </p>
+</div>
+{% endblock %}

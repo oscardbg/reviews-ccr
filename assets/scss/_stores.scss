@@ -1,0 +1,296 @@
+/*■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■ Search */
+.search {
+   padding-top: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 40%;
+   margin: 0 auto;
+   a {
+      display: block;
+      padding: 5px 0;
+      border: 1px solid rgba($dark-blue, 0.5);
+      border-radius: 5px;
+      text-align: center;
+      color: $dark-blue;
+      &:hover {
+         border-color: $dark-blue;
+         background: #fff;
+      }
+   }
+   .filter {
+      position: relative;
+      flex: 2;
+   }
+   label {
+      background: $light-blue;
+      padding: 5px 15px;
+      border: 1px solid $dark-blue;
+      border-radius: 10px;
+      color: #fff;
+      transition: 0.2s;
+      cursor: pointer;
+      &:hover {
+         background: $dark-blue;
+      }
+      span {
+         padding-left: 10px;
+      }
+   }
+   #cts {
+      display: none;
+      &:checked + ul {
+         display: grid;
+      }
+   }
+   ul {
+      display: grid;
+      padding: 5px;
+      border-radius: 5px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5px;
+      align-items: center;
+      position: absolute;
+      width: 600px;
+      left: -110%;
+      top: 35px;
+      font-size: 0.9rem;
+      display: none;
+      background: #fafafa;
+      border: 2px solid $dark-blue;
+      &:before {
+         content: "";
+         position: absolute;
+         border-bottom: 10px solid $dark-blue;
+         border-left: 10px solid transparent;
+         border-right: 10px solid transparent;
+         top: -10px;
+         left: 50%;
+         transform: translate(-50%, 0);
+      }
+   }
+   form {
+      margin: 0 auto;
+      max-width: 50%;
+      display: flex;
+      font-size: 0.9rem;
+      input {
+         padding: 5px 10px;
+         border-radius: 10px 0 0 10px;
+         outline: none;
+         border: 1px solid $dark-blue;
+         border-right: none;
+         &:focus {
+            box-shadow: 0 0 0 2px rgba($light-blue, 0.6);
+         }
+      }
+      button {
+         outline: none;
+         padding: 0 35px;
+         border-radius: 0 10px 10px 0;
+         border: 1px solid $dark-blue;
+         background: $dark-blue;
+         color: #ccc;
+         cursor: pointer;
+         transition: 0.2s;
+         &:hover {
+            box-shadow: 0 0 0 2px rgba($light-blue, 0.4);
+            color: #fff;
+         }
+      }
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Store List */
+.storeLst {
+   padding: 20px 20px 0;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 15px 20px;
+   li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid $dark-blue;
+      border-radius: 10px;
+      background: #fff;
+      transition: 0.2s;
+      &:hover {
+         transform: translate(-2px, -2px);
+         box-shadow: 2px 2px 4px rgba($dark-blue, 0.6);
+      }
+      a {
+         font-size: 1.4rem;
+         color: $dark-blue;
+      }
+      .logo {
+         margin-right: 10px;
+         width: 120px;
+      }
+      img {
+         height: 80px;
+         display: block;
+         margin: 0 auto;
+      }
+      .info {
+         flex: 1;
+         margin-right: 10px;
+         .strName {
+            font-size: 1.5rem;
+         }
+         a {
+            transition: 0.2s;
+            display: inline-block;
+            font-family: "Bebas Neue";
+            &:hover {
+               padding-left: 10px;
+               text-shadow: 2px 1px 0 rgba($light-blue, 0.2);
+            }
+         }
+      }
+      .score {
+         p {
+            font-family: "Bebas Neue";
+            font-size: 4rem;
+            border-bottom: 5px solid #fff;
+         }
+         span {
+            font-size: 1rem;
+            margin-left: -10px;
+         }
+      }
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Store */
+.store {
+   display: flex;
+   align-items: center;
+   padding: 15px;
+   border: 2px solid $dark-blue;
+   border-radius: 15px;
+   max-width: 80%;
+   margin: 0 auto;
+   background: #fff;
+   .logo {
+      margin-right: 10px;
+      width: 120px;
+   }
+   img {
+      height: 80px;
+      display: block;
+      margin: 0 auto;
+   }
+   .info {
+      flex: 1;
+      .strName {
+         font-size: 2rem;
+         font-family: "Bebas Neue";
+         color: $dark-blue;
+      }
+   }
+   .score {
+      p {
+         font-family: "Bebas Neue";
+         font-size: 4rem;
+         border-bottom: 5px solid #fff;
+      }
+      span {
+         font-size: 1rem;
+         margin-left: -10px;
+      }
+   }
+}
+article {
+   padding: 20px 20px 0;
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Bar */
+.bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1px solid rgba($dark-blue, 0.2);
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Review List */
+.reviewLst {
+   padding-top: 20px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 15px;
+   margin-bottom: 20px;
+   li {
+      border: 1px solid $dark-blue;
+      padding: 10px;
+      border-radius: 10px;
+      background: #fafafa;
+      .info {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         align-items: center;
+      }
+      .strName {
+         font-weight: bold;
+         font-size: 0.8rem;
+      }
+      .desc {
+         padding-top: 10px;
+      }
+      .date {
+         font-size: 0.8rem;
+      }
+   }
+}
+
+/*■■■■■■■■■■■■■■■■■■■■ Add Review */
+.new {
+   width: 400px;
+   margin: 20px auto 0;
+   padding: 15px;
+   border: 1px solid $dark-blue;
+   border-radius: 10px;
+   .frmT {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+   }
+   input,
+   label,
+   textarea {
+      display: block;
+      font-size: 0.9rem;
+      padding: 5px;
+      outline: none;
+   }
+   label {
+      padding-top: 15px;
+   }
+   input[type="text"] {
+      width: 100%;
+   }
+   textarea {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 100px;
+      max-height: 150px;
+   }
+   input[type="text"],
+   textarea {
+      border-radius: 5px;
+      border: 1px solid #fff;
+      &:focus {
+         border-color: $dark-blue;
+         box-shadow: 0 0 2px 2px $light-blue;
+      }
+   }
+   button {
+      color: #fff;
+      cursor: pointer;
+      margin: 20px auto 5px;
+      display: block;
+      font-size: 1rem;
+   }
+}

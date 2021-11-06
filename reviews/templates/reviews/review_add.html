@@ -1,0 +1,18 @@
+<!-- . -->
+{% extends 'base.html' %} {% load static %}
+<!-- . -->
+{% block title %}Opinar{{block.super}}{% endblock %}
+<!-- . -->
+{% block main %}
+<a href=" {% url 'reviews:store' store.id %} " class="back">Regresar</a>
+
+{% include './partials/storeData.html' %}
+
+<div class="new">
+   <p class="frmT">Agrega una reseña</p>
+   <form action="" method="post">
+      {% csrf_token %} {{form}}
+      <button type="submit" class="add">Agregar</button>
+   </form>
+</div>
+{% endblock %}

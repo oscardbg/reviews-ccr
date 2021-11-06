@@ -1,0 +1,19 @@
+<!-- . -->
+{% load static %}
+<div class="store">
+   <div class="logo">
+      <img src=" {% static 'img/storeLogo.png' %} " alt="" />
+   </div>
+   <div class="info">
+      <p class="strName">{{store.name}}</p>
+      <p>{{store.category.name}}</p>
+      <p>{{store.room}}</p>
+   </div>
+   <div class="score">
+      {% if store.totalScore == 0 %}
+      <p>&theta;</p>
+      {% else %}
+      <p>{{store.totalScore|floatformat}} <span>/5</span></p>
+      {% endif %}
+   </div>
+</div>
